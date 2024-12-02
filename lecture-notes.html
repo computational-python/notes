@@ -385,6 +385,10 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#context-managers">context managers</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#iteration">iteration</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#decorators">Decorators</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scientific-libraries">Scientific libraries</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy">Numpy</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -3198,6 +3202,1290 @@ Elapsed time 1.01
 </div>
 </div>
 </section>
+<section id="scientific-libraries">
+<h2>Scientific libraries<a class="headerlink" href="#scientific-libraries" title="Link to this heading">#</a></h2>
+<section id="numpy">
+<h3>Numpy<a class="headerlink" href="#numpy" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="ch">#!conda install numpy -y</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">dir</span><span class="p">(</span><span class="n">numpy</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;False_&#39;,
+ &#39;ScalarType&#39;,
+ &#39;True_&#39;,
+ &#39;_CopyMode&#39;,
+ &#39;_NoValue&#39;,
+ &#39;__NUMPY_SETUP__&#39;,
+ &#39;__all__&#39;,
+ &#39;__array_api_version__&#39;,
+ &#39;__array_namespace_info__&#39;,
+ &#39;__builtins__&#39;,
+ &#39;__cached__&#39;,
+ &#39;__config__&#39;,
+ &#39;__dir__&#39;,
+ &#39;__doc__&#39;,
+ &#39;__expired_attributes__&#39;,
+ &#39;__file__&#39;,
+ &#39;__former_attrs__&#39;,
+ &#39;__future_scalars__&#39;,
+ &#39;__getattr__&#39;,
+ &#39;__loader__&#39;,
+ &#39;__name__&#39;,
+ &#39;__numpy_submodules__&#39;,
+ &#39;__package__&#39;,
+ &#39;__path__&#39;,
+ &#39;__spec__&#39;,
+ &#39;__version__&#39;,
+ &#39;_array_api_info&#39;,
+ &#39;_core&#39;,
+ &#39;_distributor_init&#39;,
+ &#39;_expired_attrs_2_0&#39;,
+ &#39;_get_promotion_state&#39;,
+ &#39;_globals&#39;,
+ &#39;_int_extended_msg&#39;,
+ &#39;_mat&#39;,
+ &#39;_msg&#39;,
+ &#39;_no_nep50_warning&#39;,
+ &#39;_pyinstaller_hooks_dir&#39;,
+ &#39;_pytesttester&#39;,
+ &#39;_set_promotion_state&#39;,
+ &#39;_specific_msg&#39;,
+ &#39;_type_info&#39;,
+ &#39;_typing&#39;,
+ &#39;_utils&#39;,
+ &#39;abs&#39;,
+ &#39;absolute&#39;,
+ &#39;acos&#39;,
+ &#39;acosh&#39;,
+ &#39;add&#39;,
+ &#39;all&#39;,
+ &#39;allclose&#39;,
+ &#39;amax&#39;,
+ &#39;amin&#39;,
+ &#39;angle&#39;,
+ &#39;any&#39;,
+ &#39;append&#39;,
+ &#39;apply_along_axis&#39;,
+ &#39;apply_over_axes&#39;,
+ &#39;arange&#39;,
+ &#39;arccos&#39;,
+ &#39;arccosh&#39;,
+ &#39;arcsin&#39;,
+ &#39;arcsinh&#39;,
+ &#39;arctan&#39;,
+ &#39;arctan2&#39;,
+ &#39;arctanh&#39;,
+ &#39;argmax&#39;,
+ &#39;argmin&#39;,
+ &#39;argpartition&#39;,
+ &#39;argsort&#39;,
+ &#39;argwhere&#39;,
+ &#39;around&#39;,
+ &#39;array&#39;,
+ &#39;array2string&#39;,
+ &#39;array_equal&#39;,
+ &#39;array_equiv&#39;,
+ &#39;array_repr&#39;,
+ &#39;array_split&#39;,
+ &#39;array_str&#39;,
+ &#39;asanyarray&#39;,
+ &#39;asarray&#39;,
+ &#39;asarray_chkfinite&#39;,
+ &#39;ascontiguousarray&#39;,
+ &#39;asfortranarray&#39;,
+ &#39;asin&#39;,
+ &#39;asinh&#39;,
+ &#39;asmatrix&#39;,
+ &#39;astype&#39;,
+ &#39;atan&#39;,
+ &#39;atan2&#39;,
+ &#39;atanh&#39;,
+ &#39;atleast_1d&#39;,
+ &#39;atleast_2d&#39;,
+ &#39;atleast_3d&#39;,
+ &#39;average&#39;,
+ &#39;bartlett&#39;,
+ &#39;base_repr&#39;,
+ &#39;binary_repr&#39;,
+ &#39;bincount&#39;,
+ &#39;bitwise_and&#39;,
+ &#39;bitwise_count&#39;,
+ &#39;bitwise_invert&#39;,
+ &#39;bitwise_left_shift&#39;,
+ &#39;bitwise_not&#39;,
+ &#39;bitwise_or&#39;,
+ &#39;bitwise_right_shift&#39;,
+ &#39;bitwise_xor&#39;,
+ &#39;blackman&#39;,
+ &#39;block&#39;,
+ &#39;bmat&#39;,
+ &#39;bool&#39;,
+ &#39;bool_&#39;,
+ &#39;broadcast&#39;,
+ &#39;broadcast_arrays&#39;,
+ &#39;broadcast_shapes&#39;,
+ &#39;broadcast_to&#39;,
+ &#39;busday_count&#39;,
+ &#39;busday_offset&#39;,
+ &#39;busdaycalendar&#39;,
+ &#39;byte&#39;,
+ &#39;bytes_&#39;,
+ &#39;c_&#39;,
+ &#39;can_cast&#39;,
+ &#39;cbrt&#39;,
+ &#39;cdouble&#39;,
+ &#39;ceil&#39;,
+ &#39;char&#39;,
+ &#39;character&#39;,
+ &#39;choose&#39;,
+ &#39;clip&#39;,
+ &#39;clongdouble&#39;,
+ &#39;column_stack&#39;,
+ &#39;common_type&#39;,
+ &#39;complex128&#39;,
+ &#39;complex64&#39;,
+ &#39;complexfloating&#39;,
+ &#39;compress&#39;,
+ &#39;concat&#39;,
+ &#39;concatenate&#39;,
+ &#39;conj&#39;,
+ &#39;conjugate&#39;,
+ &#39;convolve&#39;,
+ &#39;copy&#39;,
+ &#39;copysign&#39;,
+ &#39;copyto&#39;,
+ &#39;core&#39;,
+ &#39;corrcoef&#39;,
+ &#39;correlate&#39;,
+ &#39;cos&#39;,
+ &#39;cosh&#39;,
+ &#39;count_nonzero&#39;,
+ &#39;cov&#39;,
+ &#39;cross&#39;,
+ &#39;csingle&#39;,
+ &#39;ctypeslib&#39;,
+ &#39;cumprod&#39;,
+ &#39;cumsum&#39;,
+ &#39;cumulative_prod&#39;,
+ &#39;cumulative_sum&#39;,
+ &#39;datetime64&#39;,
+ &#39;datetime_as_string&#39;,
+ &#39;datetime_data&#39;,
+ &#39;deg2rad&#39;,
+ &#39;degrees&#39;,
+ &#39;delete&#39;,
+ &#39;diag&#39;,
+ &#39;diag_indices&#39;,
+ &#39;diag_indices_from&#39;,
+ &#39;diagflat&#39;,
+ &#39;diagonal&#39;,
+ &#39;diff&#39;,
+ &#39;digitize&#39;,
+ &#39;divide&#39;,
+ &#39;divmod&#39;,
+ &#39;dot&#39;,
+ &#39;double&#39;,
+ &#39;dsplit&#39;,
+ &#39;dstack&#39;,
+ &#39;dtype&#39;,
+ &#39;dtypes&#39;,
+ &#39;e&#39;,
+ &#39;ediff1d&#39;,
+ &#39;einsum&#39;,
+ &#39;einsum_path&#39;,
+ &#39;emath&#39;,
+ &#39;empty&#39;,
+ &#39;empty_like&#39;,
+ &#39;equal&#39;,
+ &#39;errstate&#39;,
+ &#39;euler_gamma&#39;,
+ &#39;exceptions&#39;,
+ &#39;exp&#39;,
+ &#39;exp2&#39;,
+ &#39;expand_dims&#39;,
+ &#39;expm1&#39;,
+ &#39;extract&#39;,
+ &#39;eye&#39;,
+ &#39;f2py&#39;,
+ &#39;fabs&#39;,
+ &#39;fft&#39;,
+ &#39;fill_diagonal&#39;,
+ &#39;finfo&#39;,
+ &#39;fix&#39;,
+ &#39;flatiter&#39;,
+ &#39;flatnonzero&#39;,
+ &#39;flexible&#39;,
+ &#39;flip&#39;,
+ &#39;fliplr&#39;,
+ &#39;flipud&#39;,
+ &#39;float16&#39;,
+ &#39;float32&#39;,
+ &#39;float64&#39;,
+ &#39;float_power&#39;,
+ &#39;floating&#39;,
+ &#39;floor&#39;,
+ &#39;floor_divide&#39;,
+ &#39;fmax&#39;,
+ &#39;fmin&#39;,
+ &#39;fmod&#39;,
+ &#39;format_float_positional&#39;,
+ &#39;format_float_scientific&#39;,
+ &#39;frexp&#39;,
+ &#39;from_dlpack&#39;,
+ &#39;frombuffer&#39;,
+ &#39;fromfile&#39;,
+ &#39;fromfunction&#39;,
+ &#39;fromiter&#39;,
+ &#39;frompyfunc&#39;,
+ &#39;fromregex&#39;,
+ &#39;fromstring&#39;,
+ &#39;full&#39;,
+ &#39;full_like&#39;,
+ &#39;gcd&#39;,
+ &#39;generic&#39;,
+ &#39;genfromtxt&#39;,
+ &#39;geomspace&#39;,
+ &#39;get_include&#39;,
+ &#39;get_printoptions&#39;,
+ &#39;getbufsize&#39;,
+ &#39;geterr&#39;,
+ &#39;geterrcall&#39;,
+ &#39;gradient&#39;,
+ &#39;greater&#39;,
+ &#39;greater_equal&#39;,
+ &#39;half&#39;,
+ &#39;hamming&#39;,
+ &#39;hanning&#39;,
+ &#39;heaviside&#39;,
+ &#39;histogram&#39;,
+ &#39;histogram2d&#39;,
+ &#39;histogram_bin_edges&#39;,
+ &#39;histogramdd&#39;,
+ &#39;hsplit&#39;,
+ &#39;hstack&#39;,
+ &#39;hypot&#39;,
+ &#39;i0&#39;,
+ &#39;identity&#39;,
+ &#39;iinfo&#39;,
+ &#39;imag&#39;,
+ &#39;in1d&#39;,
+ &#39;index_exp&#39;,
+ &#39;indices&#39;,
+ &#39;inexact&#39;,
+ &#39;inf&#39;,
+ &#39;info&#39;,
+ &#39;inner&#39;,
+ &#39;insert&#39;,
+ &#39;int16&#39;,
+ &#39;int32&#39;,
+ &#39;int64&#39;,
+ &#39;int8&#39;,
+ &#39;int_&#39;,
+ &#39;intc&#39;,
+ &#39;integer&#39;,
+ &#39;interp&#39;,
+ &#39;intersect1d&#39;,
+ &#39;intp&#39;,
+ &#39;invert&#39;,
+ &#39;is_busday&#39;,
+ &#39;isclose&#39;,
+ &#39;iscomplex&#39;,
+ &#39;iscomplexobj&#39;,
+ &#39;isdtype&#39;,
+ &#39;isfinite&#39;,
+ &#39;isfortran&#39;,
+ &#39;isin&#39;,
+ &#39;isinf&#39;,
+ &#39;isnan&#39;,
+ &#39;isnat&#39;,
+ &#39;isneginf&#39;,
+ &#39;isposinf&#39;,
+ &#39;isreal&#39;,
+ &#39;isrealobj&#39;,
+ &#39;isscalar&#39;,
+ &#39;issubdtype&#39;,
+ &#39;iterable&#39;,
+ &#39;ix_&#39;,
+ &#39;kaiser&#39;,
+ &#39;kron&#39;,
+ &#39;lcm&#39;,
+ &#39;ldexp&#39;,
+ &#39;left_shift&#39;,
+ &#39;less&#39;,
+ &#39;less_equal&#39;,
+ &#39;lexsort&#39;,
+ &#39;lib&#39;,
+ &#39;linalg&#39;,
+ &#39;linspace&#39;,
+ &#39;little_endian&#39;,
+ &#39;load&#39;,
+ &#39;loadtxt&#39;,
+ &#39;log&#39;,
+ &#39;log10&#39;,
+ &#39;log1p&#39;,
+ &#39;log2&#39;,
+ &#39;logaddexp&#39;,
+ &#39;logaddexp2&#39;,
+ &#39;logical_and&#39;,
+ &#39;logical_not&#39;,
+ &#39;logical_or&#39;,
+ &#39;logical_xor&#39;,
+ &#39;logspace&#39;,
+ &#39;long&#39;,
+ &#39;longdouble&#39;,
+ &#39;longlong&#39;,
+ &#39;ma&#39;,
+ &#39;mask_indices&#39;,
+ &#39;matmul&#39;,
+ &#39;matrix&#39;,
+ &#39;matrix_transpose&#39;,
+ &#39;max&#39;,
+ &#39;maximum&#39;,
+ &#39;may_share_memory&#39;,
+ &#39;mean&#39;,
+ &#39;median&#39;,
+ &#39;memmap&#39;,
+ &#39;meshgrid&#39;,
+ &#39;mgrid&#39;,
+ &#39;min&#39;,
+ &#39;min_scalar_type&#39;,
+ &#39;minimum&#39;,
+ &#39;mintypecode&#39;,
+ &#39;mod&#39;,
+ &#39;modf&#39;,
+ &#39;moveaxis&#39;,
+ &#39;multiply&#39;,
+ &#39;nan&#39;,
+ &#39;nan_to_num&#39;,
+ &#39;nanargmax&#39;,
+ &#39;nanargmin&#39;,
+ &#39;nancumprod&#39;,
+ &#39;nancumsum&#39;,
+ &#39;nanmax&#39;,
+ &#39;nanmean&#39;,
+ &#39;nanmedian&#39;,
+ &#39;nanmin&#39;,
+ &#39;nanpercentile&#39;,
+ &#39;nanprod&#39;,
+ &#39;nanquantile&#39;,
+ &#39;nanstd&#39;,
+ &#39;nansum&#39;,
+ &#39;nanvar&#39;,
+ &#39;ndarray&#39;,
+ &#39;ndenumerate&#39;,
+ &#39;ndim&#39;,
+ &#39;ndindex&#39;,
+ &#39;nditer&#39;,
+ &#39;negative&#39;,
+ &#39;nested_iters&#39;,
+ &#39;newaxis&#39;,
+ &#39;nextafter&#39;,
+ &#39;nonzero&#39;,
+ &#39;not_equal&#39;,
+ &#39;number&#39;,
+ &#39;object_&#39;,
+ &#39;ogrid&#39;,
+ &#39;ones&#39;,
+ &#39;ones_like&#39;,
+ &#39;outer&#39;,
+ &#39;packbits&#39;,
+ &#39;pad&#39;,
+ &#39;partition&#39;,
+ &#39;percentile&#39;,
+ &#39;permute_dims&#39;,
+ &#39;pi&#39;,
+ &#39;piecewise&#39;,
+ &#39;place&#39;,
+ &#39;poly&#39;,
+ &#39;poly1d&#39;,
+ &#39;polyadd&#39;,
+ &#39;polyder&#39;,
+ &#39;polydiv&#39;,
+ &#39;polyfit&#39;,
+ &#39;polyint&#39;,
+ &#39;polymul&#39;,
+ &#39;polynomial&#39;,
+ &#39;polysub&#39;,
+ &#39;polyval&#39;,
+ &#39;positive&#39;,
+ &#39;pow&#39;,
+ &#39;power&#39;,
+ &#39;printoptions&#39;,
+ &#39;prod&#39;,
+ &#39;promote_types&#39;,
+ &#39;ptp&#39;,
+ &#39;put&#39;,
+ &#39;put_along_axis&#39;,
+ &#39;putmask&#39;,
+ &#39;quantile&#39;,
+ &#39;r_&#39;,
+ &#39;rad2deg&#39;,
+ &#39;radians&#39;,
+ &#39;random&#39;,
+ &#39;ravel&#39;,
+ &#39;ravel_multi_index&#39;,
+ &#39;real&#39;,
+ &#39;real_if_close&#39;,
+ &#39;rec&#39;,
+ &#39;recarray&#39;,
+ &#39;reciprocal&#39;,
+ &#39;record&#39;,
+ &#39;remainder&#39;,
+ &#39;repeat&#39;,
+ &#39;require&#39;,
+ &#39;reshape&#39;,
+ &#39;resize&#39;,
+ &#39;result_type&#39;,
+ &#39;right_shift&#39;,
+ &#39;rint&#39;,
+ &#39;roll&#39;,
+ &#39;rollaxis&#39;,
+ &#39;roots&#39;,
+ &#39;rot90&#39;,
+ &#39;round&#39;,
+ &#39;row_stack&#39;,
+ &#39;s_&#39;,
+ &#39;save&#39;,
+ &#39;savetxt&#39;,
+ &#39;savez&#39;,
+ &#39;savez_compressed&#39;,
+ &#39;sctypeDict&#39;,
+ &#39;searchsorted&#39;,
+ &#39;select&#39;,
+ &#39;set_printoptions&#39;,
+ &#39;setbufsize&#39;,
+ &#39;setdiff1d&#39;,
+ &#39;seterr&#39;,
+ &#39;seterrcall&#39;,
+ &#39;setxor1d&#39;,
+ &#39;shape&#39;,
+ &#39;shares_memory&#39;,
+ &#39;short&#39;,
+ &#39;show_config&#39;,
+ &#39;show_runtime&#39;,
+ &#39;sign&#39;,
+ &#39;signbit&#39;,
+ &#39;signedinteger&#39;,
+ &#39;sin&#39;,
+ &#39;sinc&#39;,
+ &#39;single&#39;,
+ &#39;sinh&#39;,
+ &#39;size&#39;,
+ &#39;sort&#39;,
+ &#39;sort_complex&#39;,
+ &#39;spacing&#39;,
+ &#39;split&#39;,
+ &#39;sqrt&#39;,
+ &#39;square&#39;,
+ &#39;squeeze&#39;,
+ &#39;stack&#39;,
+ &#39;std&#39;,
+ &#39;str_&#39;,
+ &#39;strings&#39;,
+ &#39;subtract&#39;,
+ &#39;sum&#39;,
+ &#39;swapaxes&#39;,
+ &#39;take&#39;,
+ &#39;take_along_axis&#39;,
+ &#39;tan&#39;,
+ &#39;tanh&#39;,
+ &#39;tensordot&#39;,
+ &#39;test&#39;,
+ &#39;testing&#39;,
+ &#39;tile&#39;,
+ &#39;timedelta64&#39;,
+ &#39;trace&#39;,
+ &#39;transpose&#39;,
+ &#39;trapezoid&#39;,
+ &#39;trapz&#39;,
+ &#39;tri&#39;,
+ &#39;tril&#39;,
+ &#39;tril_indices&#39;,
+ &#39;tril_indices_from&#39;,
+ &#39;trim_zeros&#39;,
+ &#39;triu&#39;,
+ &#39;triu_indices&#39;,
+ &#39;triu_indices_from&#39;,
+ &#39;true_divide&#39;,
+ &#39;trunc&#39;,
+ &#39;typecodes&#39;,
+ &#39;typename&#39;,
+ &#39;typing&#39;,
+ &#39;ubyte&#39;,
+ &#39;ufunc&#39;,
+ &#39;uint&#39;,
+ &#39;uint16&#39;,
+ &#39;uint32&#39;,
+ &#39;uint64&#39;,
+ &#39;uint8&#39;,
+ &#39;uintc&#39;,
+ &#39;uintp&#39;,
+ &#39;ulong&#39;,
+ &#39;ulonglong&#39;,
+ &#39;union1d&#39;,
+ &#39;unique&#39;,
+ &#39;unique_all&#39;,
+ &#39;unique_counts&#39;,
+ &#39;unique_inverse&#39;,
+ &#39;unique_values&#39;,
+ &#39;unpackbits&#39;,
+ &#39;unravel_index&#39;,
+ &#39;unsignedinteger&#39;,
+ &#39;unstack&#39;,
+ &#39;unwrap&#39;,
+ &#39;ushort&#39;,
+ &#39;vander&#39;,
+ &#39;var&#39;,
+ &#39;vdot&#39;,
+ &#39;vecdot&#39;,
+ &#39;vectorize&#39;,
+ &#39;void&#39;,
+ &#39;vsplit&#39;,
+ &#39;vstack&#39;,
+ &#39;where&#39;,
+ &#39;zeros&#39;,
+ &#39;zeros_like&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0., 0., 0.])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0., 0., 0.],
+       [0., 0., 0.],
+       [0., 0., 0.]])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="n">a</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.0</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([1., 0., 0.])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([1., 0., 0.])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d</span>  <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([1., 0., 0.])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mf">2.0</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([2., 0., 0.]), array([2., 0., 0.]), array([1., 0., 0.]))
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># python range</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 1, 2]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2, 3, 4]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 3, 5, 7, 9]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># numpy arange</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">numpy</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0, 1, 2])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">numpy</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([1, 2, 3, 4])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">numpy</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mf">.2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([1. , 1.2, 1.4, 1.6, 1.8, 2. , 2.2, 2.4, 2.6, 2.8, 3. , 3.2, 3.4,
+       3.6, 3.8, 4. , 4.2, 4.4, 4.6, 4.8, 5. , 5.2, 5.4, 5.6, 5.8, 6. ,
+       6.2, 6.4, 6.6, 6.8, 7. , 7.2, 7.4, 7.6, 7.8, 8. , 8.2, 8.4, 8.6,
+       8.8, 9. , 9.2, 9.4, 9.6, 9.8])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">la</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="mf">3.</span><span class="p">]</span>
+<span class="n">lb</span> <span class="o">=</span> <span class="p">[</span><span class="mf">4.</span><span class="p">,</span> <span class="mf">5.</span><span class="p">,</span> <span class="mf">6.</span><span class="p">]</span>
+<span class="p">[</span><span class="n">la</span><span class="p">,</span> <span class="n">lb</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[1.0, 2.0, 3.0], [4.0, 5.0, 6.0]]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">la</span><span class="p">,</span> <span class="n">lb</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[1., 2., 3.],
+       [4., 5., 6.]])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%file</span> a.dat
+<span class="mf">1.</span> <span class="mf">2.</span> <span class="mf">3.</span>
+<span class="mf">4.</span> <span class="mf">5.</span> <span class="mf">6.</span>
+<span class="mf">7.</span> <span class="mf">8.</span> <span class="mf">9.</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing a.dat
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arr</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s1">&#39;a.dat&#39;</span><span class="p">)</span>
+<span class="n">arr</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[1., 2., 3.],
+       [4., 5., 6.],
+       [7., 8., 9.]])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">numpy</span><span class="o">.</span><span class="n">savetxt</span><span class="p">(</span><span class="s1">&#39;b.dat&#39;</span><span class="p">,</span> <span class="n">arr</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">%.3e</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>cat<span class="w"> </span>b.dat
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.000e+00 2.000e+00 3.000e+00
+4.000e+00 5.000e+00 6.000e+00
+7.000e+00 8.000e+00 9.000e+00
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arr</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[1., 2., 3.],
+       [4., 5., 6.],
+       [7., 8., 9.]])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arr2</span> <span class="o">=</span> <span class="n">arr</span><span class="o">.</span><span class="n">T</span>
+<span class="n">arr2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[1., 4., 7.],
+       [2., 5., 8.],
+       [3., 6., 9.]])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.0</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arr</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0., 2., 3.],
+       [4., 5., 6.],
+       [7., 8., 9.]])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arr2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0., 4., 7.],
+       [2., 5., 8.],
+       [3., 6., 9.]])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rows</span><span class="p">,</span> <span class="n">columns</span> <span class="o">=</span> <span class="n">arr</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">out_string</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">rows</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">columns</span><span class="p">):</span>
+        <span class="n">out_string</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot; </span><span class="si">{</span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="p">]</span><span class="si">:</span><span class="s2">10.3f</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="c1">#print(arr[i, j])</span>
+    <span class="n">out_string</span> <span class="o">+=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">out_string</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      0.000      2.000      3.000
+      4.000      5.000      6.000
+      7.000      8.000      9.000
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#pure python enumerate</span>
+<span class="n">pylist</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;one&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="p">{}]</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">pylist</span><span class="p">)):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">pylist</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">element</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">pylist</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">element</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0 one
+1 2
+2 {}
+0 one
+1 2
+2 {}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#numpy enumerate</span>
+<span class="k">for</span> <span class="n">ind</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">numpy</span><span class="o">.</span><span class="n">ndenumerate</span><span class="p">(</span><span class="n">arr</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">ind</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0, 0) 0.0
+(0, 1) 2.0
+(0, 2) 3.0
+(1, 0) 4.0
+(1, 1) 5.0
+(1, 2) 6.0
+(2, 0) 7.0
+(2, 1) 8.0
+(2, 2) 9.0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span><span class="o">,</span> <span class="nn">time</span>
+<span class="n">n</span><span class="o">=</span><span class="mi">500</span>
+<span class="n">a</span><span class="o">=</span><span class="n">numpy</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="n">n</span><span class="p">,</span><span class="n">n</span><span class="p">))</span>
+<span class="n">b</span><span class="o">=</span><span class="n">numpy</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="n">n</span><span class="p">,</span><span class="n">n</span><span class="p">))</span>
+<span class="n">c</span><span class="o">=</span><span class="n">numpy</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n</span><span class="p">,</span><span class="n">n</span><span class="p">))</span>
+<span class="n">t1</span><span class="o">=</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+   <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+       <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+           <span class="n">c</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">]</span><span class="o">+=</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">k</span><span class="p">]</span><span class="o">*</span><span class="n">b</span><span class="p">[</span><span class="n">k</span><span class="p">,</span><span class="n">j</span><span class="p">]</span>
+<span class="n">t2</span><span class="o">=</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Loop timing&quot;</span><span class="p">,</span><span class="n">t2</span><span class="o">-</span><span class="n">t1</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Loop timing 34.08013701438904
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t1</span><span class="o">=</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+<span class="n">t2</span><span class="o">=</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Loop timing&quot;</span><span class="p">,</span><span class="n">t2</span><span class="o">-</span><span class="n">t1</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Loop timing 0.048319101333618164
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 114 ms, sys: 9.13 ms, total: 123 ms
+Wall time: 34.2 ms
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[2., 2., 2., ..., 2., 2., 2.],
+       [2., 2., 2., ..., 2., 2., 2.],
+       [2., 2., 2., ..., 2., 2., 2.],
+       ...,
+       [2., 2., 2., ..., 2., 2., 2.],
+       [2., 2., 2., ..., 2., 2., 2.],
+       [2., 2., 2., ..., 2., 2., 2.]])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">*</span> <span class="n">b</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[1., 1., 1., ..., 1., 1., 1.],
+       [1., 1., 1., ..., 1., 1., 1.],
+       [1., 1., 1., ..., 1., 1., 1.],
+       ...,
+       [1., 1., 1., ..., 1., 1., 1.],
+       [1., 1., 1., ..., 1., 1., 1.],
+       [1., 1., 1., ..., 1., 1., 1.]])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">numpy</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[500., 500., 500., ..., 500., 500., 500.],
+       [500., 500., 500., ..., 500., 500., 500.],
+       [500., 500., 500., ..., 500., 500., 500.],
+       ...,
+       [500., 500., 500., ..., 500., 500., 500.],
+       [500., 500., 500., ..., 500., 500., 500.],
+       [500., 500., 500., ..., 500., 500., 500.]])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">@</span> <span class="n">b</span> <span class="c1"># operator for matrix multiplication </span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[500., 500., 500., ..., 500., 500., 500.],
+       [500., 500., 500., ..., 500., 500., 500.],
+       [500., 500., 500., ..., 500., 500., 500.],
+       ...,
+       [500., 500., 500., ..., 500., 500., 500.],
+       [500., 500., 500., ..., 500., 500., 500.],
+       [500., 500., 500., ..., 500., 500., 500.]])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%file</span> muldemo.F90
+    <span class="n">INTEGER</span><span class="p">,</span> <span class="n">PARAMETER</span> <span class="p">::</span> <span class="n">N</span> <span class="o">=</span> <span class="mi">500</span>
+    <span class="n">REAL</span><span class="o">*</span><span class="mi">8</span><span class="p">,</span> <span class="n">DIMENSION</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="n">N</span><span class="p">)</span> <span class="p">::</span> <span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">C</span>
+    <span class="err">!</span> <span class="n">Timing</span>
+    <span class="n">INTEGER</span> <span class="p">::</span> <span class="n">T1</span><span class="p">,</span> <span class="n">T2</span><span class="p">,</span> <span class="n">RATE</span>
+    <span class="err">!</span> <span class="n">Initialize</span>
+    <span class="n">A</span> <span class="o">=</span> <span class="mf">1.0</span>
+    <span class="n">B</span> <span class="o">=</span> <span class="mf">1.0</span>
+    <span class="err">!</span>
+    <span class="n">CALL</span> <span class="n">SYSTEM_CLOCK</span><span class="p">(</span><span class="n">COUNT_RATE</span><span class="o">=</span><span class="n">RATE</span><span class="p">)</span>
+    <span class="n">CALL</span> <span class="n">SYSTEM_CLOCK</span><span class="p">(</span><span class="n">COUNT</span><span class="o">=</span><span class="n">T1</span><span class="p">)</span>
+    <span class="n">C</span> <span class="o">=</span> <span class="n">MATMUL</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">)</span>
+    <span class="n">CALL</span> <span class="n">SYSTEM_CLOCK</span><span class="p">(</span><span class="n">COUNT</span><span class="o">=</span><span class="n">T2</span><span class="p">)</span>
+    <span class="n">PRINT</span> <span class="s1">&#39;(A, F6.3)&#39;</span><span class="p">,</span> <span class="s1">&#39;MATMUL timing&#39;</span><span class="p">,</span>  <span class="n">DBLE</span><span class="p">(</span><span class="n">T2</span><span class="o">-</span><span class="n">T1</span><span class="p">)</span><span class="o">/</span><span class="n">RATE</span>
+    <span class="n">END</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Overwriting muldemo.F90
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>/opt/homebrew/bin/gfortran<span class="w"> </span>muldemo.F90<span class="w"> </span>-o<span class="w"> </span>muldemo
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>./muldemo
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MATMUL timing 0.006
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nd">@numpy</span><span class="o">.</span><span class="n">vectorize</span>
+<span class="k">def</span> <span class="nf">mysqrt</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="n">mysqrt</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.        , 1.41421356, 1.73205081],
+       [2.        , 2.23606798, 2.44948974],
+       [2.64575131, 2.82842712, 3.        ]])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eig</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">dir</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;__add__&#39;,
+ &#39;__annotations__&#39;,
+ &#39;__class__&#39;,
+ &#39;__class_getitem__&#39;,
+ &#39;__contains__&#39;,
+ &#39;__delattr__&#39;,
+ &#39;__dir__&#39;,
+ &#39;__doc__&#39;,
+ &#39;__eq__&#39;,
+ &#39;__format__&#39;,
+ &#39;__ge__&#39;,
+ &#39;__getattribute__&#39;,
+ &#39;__getitem__&#39;,
+ &#39;__getnewargs__&#39;,
+ &#39;__getstate__&#39;,
+ &#39;__gt__&#39;,
+ &#39;__hash__&#39;,
+ &#39;__init__&#39;,
+ &#39;__init_subclass__&#39;,
+ &#39;__iter__&#39;,
+ &#39;__le__&#39;,
+ &#39;__len__&#39;,
+ &#39;__lt__&#39;,
+ &#39;__match_args__&#39;,
+ &#39;__module__&#39;,
+ &#39;__mul__&#39;,
+ &#39;__ne__&#39;,
+ &#39;__new__&#39;,
+ &#39;__orig_bases__&#39;,
+ &#39;__reduce__&#39;,
+ &#39;__reduce_ex__&#39;,
+ &#39;__repr__&#39;,
+ &#39;__rmul__&#39;,
+ &#39;__setattr__&#39;,
+ &#39;__sizeof__&#39;,
+ &#39;__slots__&#39;,
+ &#39;__str__&#39;,
+ &#39;__subclasshook__&#39;,
+ &#39;_asdict&#39;,
+ &#39;_field_defaults&#39;,
+ &#39;_fields&#39;,
+ &#39;_make&#39;,
+ &#39;_replace&#39;,
+ &#39;count&#39;,
+ &#39;eigenvalues&#39;,
+ &#39;eigenvectors&#39;,
+ &#39;index&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">l</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">eigenvalues</span>
+<span class="n">l</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([16.01040388, -1.91242451, -0.09797938])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">eigenvectors</span>
+<span class="n">X</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[-0.21966759, -0.85734101,  0.23447866],
+       [-0.52714132,  0.05155983, -0.81237088],
+       [-0.82089474,  0.5121601 ,  0.53392257]])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arr</span> <span class="o">@</span> <span class="n">X</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ -3.51696687,  -8.43974542, -13.14285638])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">l</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ -3.51696687,  -8.43974542, -13.14285638])
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -3272,6 +4560,10 @@ Elapsed time 1.01
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#context-managers">context managers</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#iteration">iteration</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#decorators">Decorators</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scientific-libraries">Scientific libraries</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy">Numpy</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
