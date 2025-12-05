@@ -19,7 +19,7 @@ project:
     - file: notes06.ipynb
     
 site:
-  template: sphinx-book-theme
+  template: book-theme
   # options:
   #   favicon: favicon.ico
   #   logo: site_logo.png
