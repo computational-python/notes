@@ -18,6 +18,7 @@ project:
     - file: notes05.ipynb
     - file: notes06.ipynb
     - file: notes07.ipynb
+    - file: notes08.ipynb
     
 site:
   template: book-theme
