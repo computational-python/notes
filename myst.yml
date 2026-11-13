@@ -13,6 +13,8 @@ project:
     - file: README.md
     - file: 01.ipynb
     - file: 02.ipynb
+    - file: 03.ipynb
+    - file: 04.ipynb
 site:
   template: book-theme
   # options:
