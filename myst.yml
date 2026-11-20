@@ -16,6 +16,7 @@ project:
     - file: 03.ipynb
     - file: 04.ipynb
     - file: 05.ipynb
+    - file: 06.ipynb
 site:
   template: book-theme
   # options:
